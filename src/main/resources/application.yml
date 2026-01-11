@@ -14,10 +14,17 @@ spring:
     show-sql: true
 
   security:
-    user:
-      name: user
-      password: password
+    filter:
+      order: -100
 
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+jwt:
+  secret: m8N2p9Vb+e2Xc0s9R7a+9L1zY9A5KqC2mZ0Y+ZxHq+0=
+  access-exp-ms: 1800000     # 30분
+  refresh-exp-ms: 604800000  # 7일
+
+app:
+  cookie:
+    refresh-name: "refreshToken"
+    refresh-path: "/"
+    refresh-same-site: "Lax"
+    refresh-secure: false
