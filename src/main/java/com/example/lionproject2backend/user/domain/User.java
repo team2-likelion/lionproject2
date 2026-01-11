@@ -45,7 +45,6 @@ public class User extends BaseEntity{
         user.userRole = role;
         user.introduction = null;
         return user;
-
     }
 
     public void updateProfile(String nickname, String introduction) {
